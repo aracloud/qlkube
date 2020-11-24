@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: qlkube-ingress
+spec:
+  rules:
+  - host: qlkube.ndee.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: qlkube
+          servicePort: 80

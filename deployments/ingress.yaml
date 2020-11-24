@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: qlkube-ingress
+  namespace: default
+spec:
+  rules:
+  - host: qlkube.ndee.me
+    http:
+      paths:
+        - pathType: Prefix
+          path: /
+          backend:
+            service:
+              name: qlkube
+              port:
+                number: 8080
